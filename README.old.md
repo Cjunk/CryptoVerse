@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Crypto World
+
+App.js
+Boiler plate code . rafce
+
+removing warning 'react-dom.development.js:86 Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead.'
+
+~~~
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+~~~
+
+installing dependencies
+npm install antd @ant-design/icons
