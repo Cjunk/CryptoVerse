@@ -20,7 +20,7 @@ const Cryptocurrencies = () => {
               >
                 <p>Price: {millify(currency.price)}</p>
                 <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}%</p>
+                <p>Daily Change: {currency.change}%</p>
               </Card>
             </Link>
           </Col>

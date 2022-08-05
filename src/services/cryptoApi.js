@@ -1,14 +1,18 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+// This is the reducer object used by the store to change state of data
+// It will return an entire new object wit hthe new state.
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // https://redux-toolkit.js.org/rtk-query/api/createApi
 const cryptoApiHeaders = {
   "X-RapidAPI-Key": "56a7a13132msh194e4328f2a2d69p198724jsn44df556376bb",
-  "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+  // "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
 };
 const baseUrl = "https://coinranking1.p.rapidapi.com";
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
-
+const customBaseQuery = (args, { signal, dispatch, getState }, extraOptions) => {
+  // omitted
+};
 export const cryptoApi = createApi({
   reducerPath: "cryptoApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
   endpoints: (builder) => ({
     getCryptos: builder.query({
       query: () => createRequest("/coins"),
