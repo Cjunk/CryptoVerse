@@ -6,9 +6,11 @@
 //                 /|\                       \|/
 //                  L---------- APP <---------
 //
-
+//   THE STORE
+// import { createStore } from 'redux'
 import { configureStore } from "@reduxjs/toolkit";
 import { cryptoApi } from "../services/cryptoApi";
+
 export default configureStore({
   reducer: {
     [cryptoApi.reducerPath]: cryptoApi.reducer

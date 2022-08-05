@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
-const  Title  = Typography;
+const { Title }  = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
   console.log(data);
   if (isFetching) return "Loading ....";
@@ -36,15 +36,14 @@ const Homepage = () => {
         </Col>
       </Row>
       <div className="home-heading-container">
-        <Title level={2} className="home-title">
+        <Title level={3} className="home-title">
           Top 10 Cryptocurrencies in the world
         </Title>
         <Title level={2} className="show-more">
           <Link to="/cryptocurrencies">Show more</Link>
         </Title>
-        <h>HELLO</h>
       </div>
-      <Cryptocurrencies simplified />
+      <Cryptocurrencies simplified={true} />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest crypto news

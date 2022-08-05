@@ -1,5 +1,6 @@
 // This is the reducer object used by the store to change state of data
 // It will return an entire new object wit hthe new state.
+import create from "@ant-design/icons/lib/components/IconFont";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // https://redux-toolkit.js.org/rtk-query/api/createApi
 const cryptoApiHeaders = {
   "X-RapidAPI-Key": "56a7a13132msh194e4328f2a2d69p198724jsn44df556376bb",
@@ -7,6 +8,7 @@ const cryptoApiHeaders = {
 };
 const baseUrl = "https://coinranking1.p.rapidapi.com";
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
+// console.log("createRequest",createRequest)
 const customBaseQuery = (args, { signal, dispatch, getState }, extraOptions) => {
   // omitted
 };
@@ -15,7 +17,7 @@ export const cryptoApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
   endpoints: (builder) => ({
     getCryptos: builder.query({
-      query: () => createRequest("/coins"),
+      query: (count) => createRequest(`/coins?limit=${count}`),
     }),
   }),
 });
