@@ -1,7 +1,8 @@
 import React from "react";
-import { Select, Typography, Row, Col, Card } from "antd";
+import { Select, Typography, Row, Col, Card, Avatar } from "antd";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
-const { Title } = Typography;
+import moment from "moment";
+const { Text,Title } = Typography;
 const { Option } = Select;
 // const options = {
 //   method: "GET",
@@ -12,17 +13,16 @@ const { Option } = Select;
 //   },
 // };
 // const axios = require("axios");
-const News = () => {
+const News = ({ simplified }) => {
   const { data: cryptoNews } = useGetCryptoNewsQuery("");
+  const demoImage = "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
   // console.log(cryptoNews);
   if (!cryptoNews) return "Loading.....";
 
   return (
     <Row gutter={[24, 24]}>
-      {cryptoNews?.map((news, i) => {
-        {
-          console.log(news);
-        }
+      {!simplified && <Col span={24}></Col>}
+      {cryptoNews.map((news, i) => (
         <Col xs={24} sm={12} lg={8} key={i}>
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
@@ -30,12 +30,20 @@ const News = () => {
                 <Title className="news-title" level={4}>
                   {news.title}
                 </Title>
+                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="" />
               </div>
-              <p>{news.description > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
+              <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
+              <div className="provider-container">
+                <div>
+                  <Avatar src={news.title?.image?.thumbnail?.contentUrl || demoImage} alt="" />
+                  <Text className="provider-name">{news.title?.ntitleame}</Text>
+                </div>
+                <Text>{moment(news.datePublished).startOf("ss").fromNow()}</Text>
+              </div>
             </a>
           </Card>
-        </Col>;
-      })}
+        </Col>
+      ))}
     </Row>
   );
 
