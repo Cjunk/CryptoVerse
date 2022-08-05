@@ -8,7 +8,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
   const [searchTerm, setSearchTerm] = useState("");
-  console.log(cryptos);
+  // console.log(cryptos);
   useEffect(() => { // component did mount and component did update.
     setCryptos(cryptosList?.data?.coins);
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
