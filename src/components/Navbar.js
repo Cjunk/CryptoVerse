@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="logo-container-small">
         <Avatar src={icon} size="small" />
         <Typography.Title level={2} className="logo">
-          <Link to="/">CryptoVerse</Link>
+          <Link to="/">My Crypto World</Link>
         </Typography.Title>
         <Menu theme="dark">
           <Menu.Item key={0} icon={<HomeOutlined />}>
@@ -27,9 +27,10 @@ const Navbar = () => {
           <Menu.Item key={4} icon={<LoginOutlined />}>
             <Link to="/login">Login</Link>
           </Menu.Item>
+         {/* <Button className="menu-control-container">Sign up</Button>  */}
         </Menu>
 
-        {/* <Button className="menu-control-container"></Button> */}
+        
       </div>
     </div>
   );
