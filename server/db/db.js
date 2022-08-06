@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   db = new pg.Pool({
-    database: "phat_fitness",
+    database: process.env.DATABASE,
   });
 }
 module.exports = db;

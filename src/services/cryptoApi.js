@@ -1,5 +1,5 @@
 // This is the reducer object used by the store to change state of data
-// It will return an entire new object wit hthe new state.
+// It will return an entire new object with the new state.
 import create from "@ant-design/icons/lib/components/IconFont";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // https://redux-toolkit.js.org/rtk-query/api/createApi
 const cryptoApiHeaders = {

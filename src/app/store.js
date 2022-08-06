@@ -15,6 +15,6 @@ export default configureStore({
   reducer: {
     [cryptoApi.reducerPath]: cryptoApi.reducer,
     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
-    // [cryptoExchangesApi.reducerPath]: cryptoExchangesApi.reducer,
+    // [cryptoExchangesApi.reducerPath]: cryptoExchangesApi.reducer, //TODO: FIND EXHCANGE API THAT SERVES THE DATA
   },
 });

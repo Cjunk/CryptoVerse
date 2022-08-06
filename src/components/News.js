@@ -19,11 +19,11 @@ const News = ({ simplified }) => {
   const [newsOption, setNewsCategory] = useState("ALL");
   const demoImage = "";
   const { data } = useGetCryptosQuery(100);
-  const mySort = (a, b) => {
+  const mySort = (a, b) => { // FIXME: Not sorting as I would like. 
     
     return a -b
   }
-  // console.log(cryptoNews);
+  // console.log(cryptoNews); TODO:delete me
   if (!cryptoNews) return "Loading.....";
 
   return (
@@ -37,7 +37,7 @@ const News = ({ simplified }) => {
               placeholder="Select Crypto"
               optionFilterProp="children"
               onChange={(value) => setNewsCategory(value)}
-              filterSort={mySort}
+              filterSort={mySort} // doesnt work yet FIXME:
               filterOption={(input, option) => {
                 //https://ant.design/components/select/
                 console.log(option);
