@@ -19,6 +19,8 @@ STEP 2. import the Provider component to enable global usage of the store
 import { Provider } from "react-redux";
 ```
 
+STEP 3. Build the API query
+
 RAPID API[https://rapidapi.com/hub]
 
 antd Design[https://ant.design/components/icon/]  
