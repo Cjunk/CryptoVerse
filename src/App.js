@@ -9,6 +9,9 @@ const App = () => {
     <div className="app">
       <div className="navbar"></div>
       <Navbar />
+
+
+      
       <div className="main">
         <Layout>
           <div className="routes">
@@ -23,10 +26,11 @@ const App = () => {
           </div>
         </Layout>
 
+        
+
         <div className="footer">
           <Typography.Title level={5} style={{ color: "white", textAlign: "center" }}>
             My Crypto World <br />
-            All rights reserved
           </Typography.Title>
           <Space>
             <Link to="/">Home</Link>
