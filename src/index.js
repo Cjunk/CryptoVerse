@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import App from "./App";
 import store from "./app/store";
 import "antd/dist/antd.css";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root")); //BUG: HACK: ISSUE: TODO: FIXME: bug: DOME: 
 root.render(
   <React.StrictMode>
     <Router>
