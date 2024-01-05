@@ -15,6 +15,10 @@ export default configureStore({
   reducer: {
     [cryptoApi.reducerPath]: cryptoApi.reducer,
     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
-    // [cryptoExchangesApi.reducerPath]: cryptoExchangesApi.reducer, //TODO: FIND EXHCANGE API THAT SERVES THE DATA
+    // other reducers...
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(cryptoApi.middleware)
+      .concat(cryptoNewsApi.middleware),
 });
